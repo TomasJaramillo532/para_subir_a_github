@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="60" viewBox="0 0 300 60" role="img" aria-label="CaféScore">
+  <g fill="none" stroke="#A63A45" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 22h28v14a12 12 0 0 1-12 12h-4a12 12 0 0 1-12-12z"/>
+    <path d="M38 26h4a6 6 0 0 1 0 12h-4"/>
+    <path d="M18 8c-2 3 2 5 0 8M27 8c-2 3 2 5 0 8"/>
+  </g>
+  <text x="56" y="38" font-family="Helvetica, Arial, sans-serif" font-size="25" font-weight="800" letter-spacing="2" fill="#241C18">CAFÉSCORE</text>
+</svg>

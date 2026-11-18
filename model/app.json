@@ -1,0 +1,127 @@
+{
+ "producto": "CaféScore",
+ "version_artefactos": "2026-11-final-v1",
+ "generado": "2026-11-16",
+ "modelo": "Regresión logística",
+ "parametros": "C=0.01",
+ "umbral": 0.25,
+ "columnas": [
+  "n_manzanas",
+  "valor_suelo_m2",
+  "ov_servicios_empresas_300m",
+  "ov_comercio_300m",
+  "ov_educacion_300m",
+  "ov_salud_300m",
+  "ov_belleza_estilo_300m",
+  "ov_hoteles_300m",
+  "ov_entretenimiento_300m",
+  "ov_deporte_300m",
+  "fsq_negocios_hist_300m",
+  "fsq_oficinas_hist_300m",
+  "osm_universidades_300m",
+  "osm_colegios_300m",
+  "osm_oficinas_osm_300m",
+  "osm_bancos_300m",
+  "osm_centros_comerciales_300m",
+  "osm_parques_300m",
+  "osm_paraderos_sitp_300m",
+  "osm_hospitales_clinicas_300m",
+  "dist_tm_m",
+  "tm_flujo_mes",
+  "tm_a_500m",
+  "mezcla_oficina_uni",
+  "densidad_comercial_total",
+  "accesibilidad_transporte",
+  "diversidad_usos"
+ ],
+ "etiquetas": {
+  "n_manzanas": "manzanas catastrales en la celda",
+  "valor_suelo_m2": "valor del suelo",
+  "ov_servicios_empresas_300m": "servicios a empresas cerca",
+  "ov_comercio_300m": "comercio cerca",
+  "ov_educacion_300m": "negocios de educación cerca",
+  "ov_salud_300m": "negocios de salud cerca",
+  "ov_belleza_estilo_300m": "belleza y estilo cerca",
+  "ov_hoteles_300m": "hoteles cerca",
+  "ov_entretenimiento_300m": "entretenimiento cerca",
+  "ov_deporte_300m": "negocios de deporte cerca",
+  "fsq_negocios_hist_300m": "actividad comercial histórica",
+  "fsq_oficinas_hist_300m": "oficinas (histórico Foursquare)",
+  "osm_universidades_300m": "universidades cerca",
+  "osm_colegios_300m": "colegios cerca",
+  "osm_oficinas_osm_300m": "oficinas cerca",
+  "osm_bancos_300m": "bancos cerca",
+  "osm_centros_comerciales_300m": "centros comerciales cerca",
+  "osm_parques_300m": "parques cerca",
+  "osm_paraderos_sitp_300m": "paraderos SITP cerca",
+  "osm_hospitales_clinicas_300m": "hospitales y clínicas cerca",
+  "dist_tm_m": "distancia a TransMilenio",
+  "tm_flujo_mes": "flujo de la estación troncal",
+  "tm_a_500m": "estación troncal a menos de 500 m",
+  "mezcla_oficina_uni": "mezcla de oficinas y universidades",
+  "densidad_comercial_total": "densidad comercial total",
+  "accesibilidad_transporte": "accesibilidad al transporte",
+  "diversidad_usos": "diversidad de usos"
+ },
+ "tiendas": {
+  "Chapinero": [
+   4.6486,
+   -74.0628
+  ],
+  "Teusaquillo": [
+   4.6318,
+   -74.0726
+  ],
+  "Usaquén": [
+   4.695,
+   -74.0306
+  ]
+ },
+ "costos": {
+  "FN": 60,
+  "FP": 20,
+  "estudio": 20
+ },
+ "supuestos": {
+  "version": "v1-propuesta",
+  "estado": "pendiente de validación del equipo",
+  "clasificacion": {
+   "delta_cafes": 1.0,
+   "descripcion": "Saturada: hay al menos 1 café más de los que el modelo de conteo espera (brecha <= -1). Sin demanda: el clasificador no la manda a estudiar (probabilidad fuera de bloque < umbral del modelo). Oportunidad: la manda a estudiar y faltan al menos 1 café frente a lo esperado (brecha >= +1). En equilibrio: el resto (la manda a estudiar y la oferta está a menos de 1 café de lo esperado).",
+   "orden": [
+    "Saturada",
+    "Sin demanda",
+    "Oportunidad",
+    "En equilibrio"
+   ]
+  },
+  "arriendo": {
+   "presupuesto_max_millones": 12.0,
+   "area_m2": 80,
+   "ancla_millones_mes": 6.5,
+   "ancla_fuente": "Fincaraíz (2026), 127 locales en Chapinero Central, promedio 80 m² (citado en el brief)",
+   "ancla_centro": [
+    4.6486,
+    -74.0628
+   ],
+   "ancla_radio_m": 800,
+   "descripcion": "Arriendo de referencia = 6,5 M × (valor del suelo de la celda / mediana del valor del suelo de las celdas a 800 m de la tienda de Chapinero). Supone que el arriendo de un local de 80 m² es proporcional al valor del suelo, anclado en el único dato observado de arriendos del brief. No es un arriendo observado por zona."
+  },
+  "canibalizacion": {
+   "radio_m": 1000,
+   "descripcion": "Una zona a menos de 1.000 m en línea recta (Haversine) de una tienda actual se marca con posible canibalización. La distancia no demuestra canibalización por sí sola."
+  },
+  "ranking": {
+   "descripcion": "Top 10: zonas Oportunidad con arriendo de referencia <= 12 M y a más del radio de canibalización, ordenadas por brecha (cafés que faltan) y luego por puntaje. Para no recomendar celdas pegadas, se exige al menos 600 m entre zonas del ranking.",
+   "separacion_min_m": 600
+  }
+ },
+ "sklearn": "1.9.1",
+ "fechas_datos": {
+  "cafes": "Overture Maps, septiembre de 2026",
+  "suelo": "Catastro de Bogotá, 2026",
+  "transmilenio": "Validaciones troncales, septiembre de 2025",
+  "foursquare": "Fichas mayormente 2011–2016",
+  "osm": "OpenStreetMap, 2026"
+ }
+}

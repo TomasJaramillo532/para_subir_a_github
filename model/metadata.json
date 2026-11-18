@@ -1,0 +1,349 @@
+{
+  "evento": "tener al menos un café",
+  "clase_positiva": 1,
+  "umbrales": [
+    0.25
+  ],
+  "decisiones": [
+    "Descartar por ahora",
+    "Estudiar la zona"
+  ],
+  "metricas": {
+    "costo_modelo": 5880,
+    "costo_regla": 6140,
+    "regla_simple": "Estudiar solo zonas con al menos 53 comercios a 300 m y suelo de al menos COP 2.309.000/m²",
+    "unidad_costo": "en millones de COP (60 por zona con café descartada, 20 por zona sin café estudiada), en 732 zonas de 22 bloques de prueba",
+    "intervalo_diferencia": [
+      -220.0,
+      800.5
+    ],
+    "Modelo": "Regresión logística (C=0.01)",
+    "AUC en prueba": 0.789,
+    "Sensibilidad en prueba": 0.688,
+    "Precisión en prueba": 0.375,
+    "Conclusión": "El intervalo del ahorro incluye el cero: no se puede afirmar que el modelo le gane a la regla."
+  },
+  "columnas": [
+    {
+      "nombre": "n_manzanas",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": 1.0,
+      "maximo": 70.0,
+      "referencia": 10.0,
+      "p10": 2.0,
+      "p90": 27.0
+    },
+    {
+      "nombre": "valor_suelo_m2",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": 12600.0,
+      "maximo": 17785000.0,
+      "referencia": 3000000.0,
+      "p10": 860000.0,
+      "p90": 4648000.000000002
+    },
+    {
+      "nombre": "ov_servicios_empresas_300m",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": 0.0,
+      "maximo": 1025.0,
+      "referencia": 40.0,
+      "p10": 4.0,
+      "p90": 184.0
+    },
+    {
+      "nombre": "ov_comercio_300m",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": 0.0,
+      "maximo": 1575.0,
+      "referencia": 48.0,
+      "p10": 4.0,
+      "p90": 147.80000000000018
+    },
+    {
+      "nombre": "ov_educacion_300m",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": 0.0,
+      "maximo": 131.0,
+      "referencia": 9.0,
+      "p10": 1.0,
+      "p90": 26.0
+    },
+    {
+      "nombre": "ov_salud_300m",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": 0.0,
+      "maximo": 398.0,
+      "referencia": 6.0,
+      "p10": 0.0,
+      "p90": 38.0
+    },
+    {
+      "nombre": "ov_belleza_estilo_300m",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": 0.0,
+      "maximo": 226.0,
+      "referencia": 14.0,
+      "p10": 1.0,
+      "p90": 45.0
+    },
+    {
+      "nombre": "ov_hoteles_300m",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": 0.0,
+      "maximo": 124.0,
+      "referencia": 2.0,
+      "p10": 0.0,
+      "p90": 13.0
+    },
+    {
+      "nombre": "ov_entretenimiento_300m",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": 0.0,
+      "maximo": 113.0,
+      "referencia": 3.0,
+      "p10": 0.0,
+      "p90": 10.0
+    },
+    {
+      "nombre": "ov_deporte_300m",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": 0.0,
+      "maximo": 69.0,
+      "referencia": 7.0,
+      "p10": 1.0,
+      "p90": 18.0
+    },
+    {
+      "nombre": "fsq_negocios_hist_300m",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": 0.0,
+      "maximo": 3486.0,
+      "referencia": 83.0,
+      "p10": 7.0,
+      "p90": 546.0
+    },
+    {
+      "nombre": "fsq_oficinas_hist_300m",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": 0.0,
+      "maximo": 1094.0,
+      "referencia": 23.0,
+      "p10": 1.0,
+      "p90": 182.80000000000018
+    },
+    {
+      "nombre": "osm_universidades_300m",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": 0.0,
+      "maximo": 35.0,
+      "referencia": 0.0,
+      "p10": 0.0,
+      "p90": 1.0
+    },
+    {
+      "nombre": "osm_colegios_300m",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": 0.0,
+      "maximo": 16.0,
+      "referencia": 2.0,
+      "p10": 0.0,
+      "p90": 5.0
+    },
+    {
+      "nombre": "osm_oficinas_osm_300m",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": 0.0,
+      "maximo": 96.0,
+      "referencia": 1.0,
+      "p10": 0.0,
+      "p90": 10.0
+    },
+    {
+      "nombre": "osm_bancos_300m",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": 0.0,
+      "maximo": 29.0,
+      "referencia": 0.0,
+      "p10": 0.0,
+      "p90": 6.0
+    },
+    {
+      "nombre": "osm_centros_comerciales_300m",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": 0.0,
+      "maximo": 19.0,
+      "referencia": 0.0,
+      "p10": 0.0,
+      "p90": 2.0
+    },
+    {
+      "nombre": "osm_parques_300m",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": 0.0,
+      "maximo": 45.0,
+      "referencia": 7.0,
+      "p10": 1.0,
+      "p90": 16.0
+    },
+    {
+      "nombre": "osm_paraderos_sitp_300m",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": 0.0,
+      "maximo": 37.0,
+      "referencia": 7.0,
+      "p10": 1.0,
+      "p90": 18.0
+    },
+    {
+      "nombre": "osm_hospitales_clinicas_300m",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": 0.0,
+      "maximo": 23.0,
+      "referencia": 0.0,
+      "p10": 0.0,
+      "p90": 3.0
+    },
+    {
+      "nombre": "dist_tm_m",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": 15.74487329349105,
+      "maximo": 10612.653274548304,
+      "referencia": 1187.287405060957,
+      "p10": 322.29737407554273,
+      "p90": 3451.8555858283944
+    },
+    {
+      "nombre": "tm_flujo_mes",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": 21303.0,
+      "maximo": 1885819.0,
+      "referencia": 266622.0,
+      "p10": 86188.0,
+      "p90": 1451496.0
+    },
+    {
+      "nombre": "tm_a_500m",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": 0.0,
+      "maximo": 1.0,
+      "referencia": 0.0,
+      "p10": 0.0,
+      "p90": 1.0
+    },
+    {
+      "nombre": "mezcla_oficina_uni",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": 0.0,
+      "maximo": 1728.0,
+      "referencia": 0.0,
+      "p10": 0.0,
+      "p90": 7.0
+    },
+    {
+      "nombre": "densidad_comercial_total",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": 0.0,
+      "maximo": 2556.0,
+      "referencia": 95.0,
+      "p10": 9.0,
+      "p90": 354.8000000000002
+    },
+    {
+      "nombre": "accesibilidad_transporte",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": 13.995221827852966,
+      "maximo": 20239.98593836724,
+      "referencia": 269.3617411918305,
+      "p10": 69.6264786996719,
+      "p90": 1166.2058839326737
+    },
+    {
+      "nombre": "diversidad_usos",
+      "tipo": "numérica",
+      "permite_faltantes": false,
+      "minimo": -0.0,
+      "maximo": 1.989466836267514,
+      "referencia": 1.5624910883209369,
+      "p10": 1.1810049947991423,
+      "p90": 1.744569256758303
+    }
+  ],
+  "etiquetas": {
+    "n_manzanas": "Manzanas catastrales en la zona",
+    "valor_suelo_m2": "Valor del suelo (COP/m²)",
+    "ov_servicios_empresas_300m": "Servicios a empresas a 300 m",
+    "ov_comercio_300m": "Comercios a 300 m",
+    "ov_educacion_300m": "Negocios de educación a 300 m",
+    "ov_salud_300m": "Negocios de salud a 300 m",
+    "ov_belleza_estilo_300m": "Negocios de belleza y estilo a 300 m",
+    "ov_hoteles_300m": "Hoteles a 300 m",
+    "ov_entretenimiento_300m": "Negocios de entretenimiento a 300 m",
+    "ov_deporte_300m": "Negocios de deporte a 300 m",
+    "fsq_negocios_hist_300m": "Negocios históricos (Foursquare) a 300 m",
+    "fsq_oficinas_hist_300m": "Oficinas históricas (Foursquare) a 300 m",
+    "osm_universidades_300m": "Universidades a 300 m",
+    "osm_colegios_300m": "Colegios a 300 m",
+    "osm_oficinas_osm_300m": "Oficinas a 300 m",
+    "osm_bancos_300m": "Bancos a 300 m",
+    "osm_centros_comerciales_300m": "Centros comerciales a 300 m",
+    "osm_parques_300m": "Parques a 300 m",
+    "osm_paraderos_sitp_300m": "Paraderos del SITP a 300 m",
+    "osm_hospitales_clinicas_300m": "Hospitales y clínicas a 300 m",
+    "dist_tm_m": "Distancia a TransMilenio (m)",
+    "tm_flujo_mes": "Validaciones mensuales de la estación troncal",
+    "tm_a_500m": "Estación troncal a menos de 500 m (1 = sí)",
+    "mezcla_oficina_uni": "Mezcla de oficinas y universidades",
+    "densidad_comercial_total": "Densidad comercial a 300 m",
+    "accesibilidad_transporte": "Accesibilidad al transporte",
+    "diversidad_usos": "Diversidad de usos del suelo",
+    "h3": "Zona (H3)",
+    "lat": "Latitud",
+    "lon": "Longitud",
+    "clase": "Clasificación",
+    "isu": "Índice de sobremesa urbana",
+    "n_cafes": "Cafés registrados",
+    "cafes_esperados": "Cafés esperados",
+    "brecha": "Brecha (esperados − observados)",
+    "arriendo_ref_millones": "Arriendo de referencia (COP M/mes, supuesto)",
+    "dist_min_m": "Distancia a la tienda más cercana (m)",
+    "tienda_cercana": "Tienda Cereza más cercana",
+    "tm_estacion": "Estación troncal más cercana"
+  },
+  "columna_id": "h3",
+  "n_entrenamiento": 2543,
+  "versiones": {
+    "scikit-learn": "1.9.1",
+    "pandas": "3.0.5",
+    "numpy": "2.5.3",
+    "joblib": "1.6.0"
+  },
+  "python": "3.13",
+  "fecha_exportacion": "2026-11-16T19:24:09"
+}
